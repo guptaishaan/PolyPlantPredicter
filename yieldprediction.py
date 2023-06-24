@@ -6,13 +6,13 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 # Load the data from the CSV file
-data = pd.read_csv('/Users/ishaangupta/Downloads/main/assderp/ssrn/10_4231_R72F7KK2/Agro-Climatic Data by County/final_data2011.csv')
+data = pd.read_csv('final_data.csv')
 
 # Extract the predictor variables (crop moisture and crop year) and target variable (crop yield)
 X = data[['sPh', 'ppt']].values
 y = data['yield'].values
 
-# Split the data into training and testing sets (90% training, 10% testing)
+# Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.001, random_state=1)
 
 # Create polynomial features for quadratic regression
